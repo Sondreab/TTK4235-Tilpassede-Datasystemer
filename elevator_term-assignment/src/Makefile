@@ -2,13 +2,13 @@
 CC = clang-3.6
 
 # Compiler flags go here.
-CFLAGS = -g -Wall
+CFLAGS = -g -Wall -c
 
 # Linker flags go here.
 LDFLAGS = -lcomedi -lm
 
 # list of sources
-ELEVSRC = elev.c io.c main.c
+ELEVSRC = elev.c io.c main.c Timer.c FinalStateMachine.c Queue.c
 
 # program executable file name.
 TARGET = heis
@@ -24,8 +24,8 @@ $(TARGET): $(ELEVOBJ)
 	$(CC) $^ -o $@ $(LDFLAGS)
 
 # Compile: create object files from C source files.
-%.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@ 
+#%.o : %.c
+#	$(CC) $(CFLAGS) -c $< -o $@ 
 
 # rule for cleaning re-compilable files.
 clean:

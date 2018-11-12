@@ -5,9 +5,14 @@
 #ifndef __INCLUDE_DRIVER_H__
 #define __INCLUDE_DRIVER_H__
 
-
+    
 // Number of floors
 #define N_FLOORS 4
+
+
+/*Vi flyttet denne fra elev.c for å få tilgang til den i filer som inkluderer elev.h*/
+// Number of signals and lamps on a per-floor basis (excl sensor)
+#define N_BUTTONS 3
 
 
 
@@ -117,6 +122,8 @@ int elev_get_button_signal(elev_button_type_t button, int floor);
   @param value Non-zero value turns lamp on, 0 turns lamp off.
 */
 void elev_set_button_lamp(elev_button_type_t button, int floor, int value);
+
+
 
 
 
